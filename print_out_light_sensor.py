@@ -31,16 +31,16 @@ def main():
     display_duration = 5
     # Create instances of EnviroKit and Cloud IoT.
     enviro = EnviroBoard()
-    with CloudIot(args.cloud_config) as cloud:
-        # Indefinitely update display and upload to cloud.
-        sensors = {}
-        read_period = int(total_display / display_duration)
-        for read_count in itertools.count():
-            #dis play light sensor
-            sensors['ambient_light'] = enviro.ambient_light
-            msg = 'Light: %.2f lux\n' % _none_to_nan(sensors['ambient_light'])
-            update_display(enviro.display, msg)
-            sleep(args.display_duration)
-            print(sensors['ambien_light'])
+    
+    # Indefinitely update display and upload to cloud.
+    sensors = {}
+    read_period = int(total_display / display_duration)
+    for read_count in itertools.count():
+        #dis play light sensor
+        sensors['ambient_light'] = enviro.ambient_light
+        msg = 'Light: %.2f lux\n' % _none_to_nan(sensors['ambient_light'])
+        update_display(enviro.display, msg)
+        sleep(args.display_duration)
+        print(sensors['ambien_light'])
 if __name__ == '__main__':
     main()
