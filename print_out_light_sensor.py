@@ -28,7 +28,7 @@ def _none_to_nan(val):
 def main():
     # Pull arguments from command line.
     total_display = 300
-    display_duration = 5
+    display_duration = 2
     # Create instances of EnviroKit and Cloud IoT.
     enviro = EnviroBoard()
     
@@ -40,7 +40,7 @@ def main():
         sensors['ambient_light'] = enviro.ambient_light
         msg = 'Light: %.2f lux\n' % _none_to_nan(sensors['ambient_light'])
         update_display(enviro.display, msg)
-        sleep(args.display_duration)
+        sleep(display_duration)
         print(sensors['ambien_light'])
 if __name__ == '__main__':
     main()
