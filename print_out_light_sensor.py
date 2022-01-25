@@ -41,6 +41,6 @@ def main():
         msg = 'Light: %.2f lux\n' % _none_to_nan(sensors['ambient_light'])
         update_display(enviro.display, msg)
         sleep(display_duration)
-        print(sensors['ambien_light'])
+        print(enviro.ambient_light)
 if __name__ == '__main__':
     main()
