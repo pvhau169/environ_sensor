@@ -28,7 +28,7 @@ def _none_to_nan(val):
 def main():
     # Pull arguments from command line.
     total_display = 300
-    display_duration = 2
+    display_duration = 0.2
     # Create instances of EnviroKit and Cloud IoT.
     enviro = EnviroBoard()
     
